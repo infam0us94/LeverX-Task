@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.project.leverxtask.MyApp
 import com.project.leverxtask.database.NewsDao
 import com.project.leverxtask.repository.RemoteRepository
-import com.project.leverxtask.repository.model.DetailNews
+import com.project.leverxtask.repository.model.Link
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,7 +16,7 @@ class DetailsNewsViewModel(application: Application) : AndroidViewModel(applicat
 
     private val repo = RemoteRepository.getInstance()
 
-    private val detail: MutableLiveData<DetailNews> = MutableLiveData()
+    private val detail: MutableLiveData<ArrayList<Link>> = MutableLiveData()
 
     @Inject
     lateinit var newsDao: NewsDao
@@ -25,24 +25,10 @@ class DetailsNewsViewModel(application: Application) : AndroidViewModel(applicat
         (application as MyApp).getAppComponent().inject(this)
     }
 
-    fun getDetail(url: String): MutableLiveData<DetailNews> {
+    fun getDetail(): MutableLiveData<ArrayList<Link>> {
         viewModelScope.launch(Dispatchers.IO) {
-       if (repo.getDetailNews(url) == null) {
-                getDetailNews()
-            } else {
-                detail.postValue(repo.getDetailNews(url))
-                insertDetailNews(repo.getDetailNews(url))
-            }
+            detail.postValue(repo.getLinks())
         }
         return detail
-    }
-
-    private fun getDetailNews() {
-        val detailNews = newsDao.getDetailNewsFromDB()
-        detail.postValue(detailNews)
-    }
-
-    private fun insertDetailNews(newsEntity: DetailNews) {
-        newsDao.insertDetailNews(newsEntity)
     }
 }

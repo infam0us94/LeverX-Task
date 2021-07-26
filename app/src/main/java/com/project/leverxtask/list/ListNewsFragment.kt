@@ -9,11 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.project.leverxtask.R
 import com.project.leverxtask.adapter.DataAdapter
 import com.project.leverxtask.databinding.ListNewsFragmentBinding
+import com.project.leverxtask.detail.ContainerFragment
 import com.project.leverxtask.repository.model.News
 
-class ListNewsFragment : Fragment() {
+class ListNewsFragment : Fragment(), DataAdapter.OnItemClickListener {
 
     private var _binding: ListNewsFragmentBinding? = null
     private val binding get() = _binding!!
@@ -38,7 +40,7 @@ class ListNewsFragment : Fragment() {
     private fun initRecView() {
         recView = binding.recView
         recView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        adapter = DataAdapter()
+        adapter = DataAdapter(requireContext(), this)
         recView.adapter = adapter
     }
 
@@ -54,6 +56,13 @@ class ListNewsFragment : Fragment() {
                 binding.progressBar.visibility = View.GONE
             }
         }
+    }
+
+    override fun onItemClick(item: News) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, ContainerFragment())
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onDestroyView() {

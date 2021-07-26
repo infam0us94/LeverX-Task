@@ -30,7 +30,6 @@ class ListNewsViewModel(application: Application) : AndroidViewModel(application
             if (repo.getNewsList().isNullOrEmpty()) {
                 getAllNews()
             } else {
-                deleteNews()
                 listNews.postValue(repo.getNewsList())
                 insertNews(repo.getNewsList())
             }
@@ -45,9 +44,5 @@ class ListNewsViewModel(application: Application) : AndroidViewModel(application
 
     private fun insertNews(newsEntity: List<News>) {
         newsDao.insertNews(newsEntity)
-    }
-
-    private fun deleteNews() {
-        newsDao.deleteNews()
     }
 }

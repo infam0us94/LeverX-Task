@@ -5,7 +5,7 @@ import com.project.leverxtask.di.AppComponent
 import com.project.leverxtask.di.AppModule
 import com.project.leverxtask.di.DaggerAppComponent
 
-class MyApp: Application() {
+class MyApp : Application() {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -14,6 +14,7 @@ class MyApp: Application() {
             .appModule(AppModule(this))
             .build()
     }
+
     fun getAppComponent(): AppComponent {
         return appComponent
     }

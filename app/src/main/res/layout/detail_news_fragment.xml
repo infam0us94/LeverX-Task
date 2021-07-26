@@ -1,70 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <WebView
+        android:id="@+id/web_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress_bar"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-            <TextView
-                android:id="@+id/main_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Title" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="ssnifaurnaovanvn;onnovnavnoinairnvnsnvroisniwrnvissinsoiniwnervfsniisnseirnsinisenisnvsenvsonvseonsensoevsi" />
+    <!--            <TextView-->
+    <!--                android:id="@+id/main_title"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textStyle="bold"-->
+    <!--                tools:text="Title" />-->
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="8dp"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/dev_by" />
+    <!--            <TextView-->
+    <!--                android:id="@+id/title"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18sp"-->
+    <!--                tools:text="ssnifaurnaovanvn;onnovnavnoinairnvnsnvroisniwrnvissinsoiniwnervfsniisnseirnsinisenisnvsenvsonvseonsensoevsi" />-->
 
-            <TextView
-                android:id="@+id/desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="ssnifaurnaovanvn;onnovnavnoinairnvnsnvroisniwrnvissinsoiniwnervfsniisnseirnsinisenisnvsenvsonvseonsensoevsi" />
+    <!--            <ImageView-->
+    <!--                android:id="@+id/image"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="200dp"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                tools:src="@drawable/dev_by" />-->
 
-        </LinearLayout>
+    <!--            <TextView-->
+    <!--                android:id="@+id/desc"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18sp"-->
+    <!--                tools:text="ssnifaurnaovanvn;onnovnavnoinairnvnsnvroisniwrnvissinsoiniwnervfsniisnseirnsinisenisnvsenvsonvseonsensoevsi" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--        </LinearLayout>-->
 
-</ScrollView>
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
